@@ -1,0 +1,48 @@
+# this seems to break any page below the root directory, including CSS 
+baseURL: 'https://kylesliva.me'
+languageCode: 'en-us'
+title: 'Kyle Sliva'
+relativeURLs: true
+theme: "PaperMod"
+menu:
+  main:
+    - identifier: archive
+      name: Posts
+      url: /archive
+    - identifier: about
+      name: About
+      url: /about
+    - identifer: search
+      name: Search
+      url: /search
+    # - identifer: tags
+    #   name: Tags
+    #   url: /tags
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # necessary for search
+deployment:
+  targets:
+    name: "site-bucket"
+    url: "s3://kylesliva-me/"
+    cloudFrontdistributionID: "E8Z6FE1YJH7HU"
+  matchers:
+    # cached with gzip compression enabled
+    - pattern: "^.+\\.(js|css|md|otf|svg|ttf|txt)$"
+      cacheControl: "max-age=604800, no-transform, public"
+      gzip: true
+    # cached with gzip compression disabled
+    - pattern: "^.+\\.(bmp|gif|ico|jpeg|jpg|mp3|mp4|pdf|png|rss|tiff|woff|woff2)$"
+      cacheControl: "max-age=604800, no-transform, public"
+      gzip: false
+    # sitemap gets a special content-type header
+    - pattern: "^sitemap\\.xml$"
+      contentType: "application/xml"
+      cacheControl: "max-age=3600, no-transform, public"
+      gzip: true
+    # cached with gzip compression enabled
+    - pattern: "^.+\\.(html|json|xml)$"
+      cacheControl: "max-age=3600, no-transform, public"
+      gzip: true
