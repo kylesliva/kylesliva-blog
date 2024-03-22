@@ -4,6 +4,20 @@ languageCode: 'en-us'
 title: 'Kyle Sliva'
 relativeURLs: true
 theme: "PaperMod"
+params:
+  profileMode:
+    enabled: true
+    # title: "<Title>" # optional default will be site title
+    # subtitle: "This is subtitle"
+    # imageUrl: "<image link>" # optional
+    # imageTitle: "<title of image as alt>" # optional
+    # imageWidth: 120 # custom size
+    # imageHeight: 120 # custom size
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/kylesliva"
+    - name: "linkedin"
+      url: "https://www.linkedin.com/in/kylesliva/"
 menu:
   main:
     - identifier: archive
