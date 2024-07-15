@@ -6,7 +6,7 @@ relativeURLs: true
 theme: "PaperMod"
 params:
   profileMode:
-    enabled: true
+    enabled: false
     # title: "<Title>" # optional default will be site title
     # subtitle: "This is subtitle"
     # imageUrl: "<image link>" # optional
