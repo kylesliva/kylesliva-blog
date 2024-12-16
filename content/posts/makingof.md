@@ -32,7 +32,7 @@ Please refer to Logan's guide for the complete overview of how my site is set up
 
 # Basic workflow
 1. Write Markdown content with images specified
-	1. I use [Obsidian](https://obsidian.md/) as a kind of digital notebook, so a Markdown-based CMS is a natural fit. I can just grab the raw Markdown source and push it to my local site source, which then 
+	1. I use [Obsidian](https://obsidian.md/) as a kind of digital notebook, so a Markdown-based CMS is a natural fit. I can just grab the raw Markdown source and push it to my local site source, which then gets rendered into a page like the one  you're reading now!
 2. Save images to `static/`, making sure names match the Markdown source code.
 3. Create new content in Hugo locally:
 ```
@@ -41,7 +41,7 @@ $ hugo new content posts/2024/makingof.md
 4. Grab raw Markdown source from Step 1. Populate file with the latter, taking care not to overwrite the front matter (the YAML syntax at the top of the file, delimited with `---`)
 5. Navigate to the project source. Test on a local server with:
 ```
-hugo server --buildDrafts 
+$ hugo server --buildDrafts 
 ```
 6. Verify the output looks good, adjust as needed. When happy with results, set the `draft:` argument in the content's front matter to `false`.
 7. Deploy to S3 with:
@@ -53,6 +53,5 @@ $ hugo; hugo deploy --target site-bucket --logLevel INFO
 
 # What to do next?
 1. Set up GitHub Actions deploys to automate step 4 onwards from my workflow. I am looking at using [this](https://loganmarchione.com/2023/11/deploying-hugo-with-cloudfront-and-s3-for-real-this-time/#github-actions) as a model, but I'd like to sit down and really spend time customizing it to fit how I do my work.
-2. Fix my favicon for mobile (getting acquainted with supporting every platform that uses the web!)
-3. Writing automation for steps 1-3 of my workflow
+2. Writing automation for steps 1-3 of my workflow
 	1. Get from Obsidian to my repo at a minimum of effort.
